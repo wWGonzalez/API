@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>it is the title :D</title>
+    </head>
+    <body>
+        <center>
+            <!--
+            <img src="{% static '{{ user.profile_picture }}' %}">
+
+            <img src="{% static 'img/Mary-mary-santiago-24480395-511-796.jpg' %}">
+            <img src="{% static 'files/profile_pictures/Mary-mary-santiago-24480395-511-796.jpg' %}">
+            -->
+            <img src="{% static user.get_profile_picture %}">
+        </center>
+        <p>{{ user.get_profile_picture }}</p>
+        <!--
+        <p>Hello world</p>
+        -->
+    </body>
+</html>
+
+{% block content %}
+{% endblock %}
