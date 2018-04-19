@@ -1,0 +1,176 @@
+{% load staticfiles %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>UMG Community</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/retina.min.js' %}"></script>
+	</head>
+	<body>
+		
+	<div class="gtco-loader"></div>
+	
+	<div id="page">
+
+	
+	<div class="page-inner">
+	<nav class="gtco-nav" role="navigation">
+		<div class="gtco-container">
+			
+			<div class="row">
+				<div class="col-sm-4 col-xs-12">
+					<div id="gtco-logo"><a href="{% url 'index' %}">Start <em>.</em>{{ user.username }}</a></div>
+				</div>
+				{% if user.is_authenticated == True %}
+				<div class="col-xs-8 text-right menu-1">
+					<ul>
+						<li><a href="my_profile.html">My Profile</a></li>
+						<li class="has-dropdown">
+							<a href="#">Issues by</a>
+							<ul class="dropdown">
+								<li><a href="#">Name</a></li>
+								<li><a href="#">Date</a></li>
+								<li><a href="#">General</a></li>
+							</ul>
+						</li>
+						<li><a href="pricing.html">My activity</a></li>
+					</ul>
+				</div>
+				{% endif %}
+			</div>
+			
+		</div>
+	</nav>
+
+	
+	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image: url({% static 'images/LIBROS.jpg' %})">
+		<div class="overlay"></div>
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 text-left">
+					
+					{% if user.is_authenticated == False %}
+					<div class="row row-mt-15em">
+						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+							<span class="intro-text-small">Welcome to:</span>
+							<h1>UMG Community</h1>
+							<!--
+							<h1>You will know the truth and the truth will make you free</h1>	
+							-->
+						</div>
+						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+							<div class="form-wrap">
+								<div class="tab">
+									<ul class="tab-menu">
+										<li class="active gtco-first"><a href="#" data-tab="signup">Sign up</a></li>
+										<li class="gtco-second"><a href="#" data-tab="login">Login</a></li>
+									</ul>
+									<div class="tab-content">
+										<div class="tab-content-inner active" data-content="signup">
+											<form action="#">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="username">Username or Email</label>
+														<input type="text" class="form-control" id="username">
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="password">Password</label>
+														<input type="password" class="form-control" id="password">
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="password2">Repeat Password</label>
+														<input type="password" class="form-control" id="password2">
+													</div>
+												</div>
+
+												<div class="row form-group">
+													<div class="col-md-12">
+														<input type="submit" class="btn btn-primary" value="Sign up">
+													</div>
+												</div>
+											</form>	
+										</div>
+
+										<div class="tab-content-inner" data-content="login">
+											<form action="#">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="username">Username or Email</label>
+														<input type="text" class="form-control" id="username">
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="password">Password</label>
+														<input type="password" class="form-control" id="password">
+													</div>
+												</div>
+
+												<div class="row form-group">
+													<div class="col-md-12">
+														<input type="submit" class="btn btn-primary" value="Login">
+													</div>
+												</div>
+											</form>	
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					
+				</div>
+			</div>
+		</div>
+	</header>
+	
+
+	{% block content %}
+	{% endblock %}
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- countTo -->
+	<script src="{% static 'js/jquery.countTo.js' %}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+	<!-- Main -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

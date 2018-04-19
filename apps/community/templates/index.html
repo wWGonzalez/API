@@ -1,25 +1,16 @@
-{% load staticfiles %}
-
-<html>
-    <head>
-        <title>it is the title :D</title>
-    </head>
-    <body>
-        <center>
-            <!--
-            <img src="{% static '{{ user.profile_picture }}' %}">
-
-            <img src="{% static 'img/Mary-mary-santiago-24480395-511-796.jpg' %}">
-            <img src="{% static 'files/profile_pictures/Mary-mary-santiago-24480395-511-796.jpg' %}">
-            -->
-            <img src="{% static user.get_profile_picture %}">
-        </center>
-        <p>{{ user.get_profile_picture }}</p>
-        <!--
-        <p>Hello world</p>
-        -->
-    </body>
-</html>
+{% extends 'index_main.html' %}
 
 {% block content %}
+<div class="gtco-section border-bottom">
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+                <h2>UMG Community</h2>
+                <p>This page is currently on build</p>
+                <p>Por el momento pongamos cualquier cosa aca jajaja</p>
+                <p>Papus trabajando no molestar jaja</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

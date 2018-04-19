@@ -2,13 +2,7 @@ from django.db import models
 
 from django.contrib.auth.models import AbstractUser
 # Create your models here.
-
 # My models:
-'''
-Modified User
-Comment
-Issue
-'''
 
 class User(AbstractUser):
     gender_choices = (
@@ -45,6 +39,11 @@ class Issue(models.Model):
     def __str__(self):
         return '%s %s' % (self.title, self.text)
 
+    def get_issue_image(self):
+        keyword = str(self.image)
+        key = keyword[22:]
+        return key
+
 class Comment(models.Model):
     text = models.TextField()
     image = models.ImageField(upload_to = 'apps/community/static/files/comment_pictures/', blank = True)
@@ -54,3 +53,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return '%s' % (self.text)
+
+    def get_comment_image(self):
+        keyword = str(self.image)
+        key = keyword[22:]
+        return key
